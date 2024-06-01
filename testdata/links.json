@@ -1,0 +1,19 @@
+{
+    "main_menu": [
+        {
+            "init_url": "https://practicesoftwaretesting.com/#/contact",
+            "partial_selector": "nav-home",
+            "expected_url": "https://practicesoftwaretesting.com/#/"
+        },
+        {
+            "init_url": "https://practicesoftwaretesting.com/#/",
+            "partial_selector": "nav-contact",
+            "expected_url": "https://practicesoftwaretesting.com/#/contact"
+        },
+        {
+            "init_url": "https://practicesoftwaretesting.com/#/",
+            "partial_selector": "nav-sign-in",
+            "expected_url": "https://practicesoftwaretesting.com/#/auth/login"
+        }
+    ]
+}
