@@ -19,6 +19,5 @@ def load_main_menu_dropdown_list_testdata():
     return [(item['partial_selector'], item['expected_url']) for item in source]
 
 
-def load_credentials_testdata(key):
-    source = load_test_data(FileNames.CREDENTIALS, key)
-    return [(item['email'], item['password']) for item in source]
+def load_array(file_name, key):
+    return load_test_data(file_name, key)
