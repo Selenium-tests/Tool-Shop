@@ -11,7 +11,7 @@ class LoginForm(BasePage):
         self._EMAIL_FIELD = (By.ID, 'email')
         self._PASSWORD_FIELD = (By.ID, 'password')
         self._LOGIN_BUTTON = (By.CSS_SELECTOR, 'input[type="submit"]')
-        self._LOGIN_ERROR = (By.CSS_SELECTOR, 'div[data-test="login-error"]')
+        self._LOGIN_ERROR = (By.CSS_SELECTOR, 'div.alert.alert-danger')
 
     def _fill_field(self, locator, text):
         self.wait.until(EC.element_to_be_clickable(locator)).send_keys(text)
