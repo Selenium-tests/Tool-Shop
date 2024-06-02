@@ -7,6 +7,7 @@ from support.DriverType import DriverType
 @pytest.fixture(scope='function')
 def driver():
     webdriver = Provider.get_driver(DriverType.CHROME)
+    webdriver.maximize_window()
     yield webdriver
     webdriver.quit()
 
