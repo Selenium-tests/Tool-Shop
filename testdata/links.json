@@ -18,23 +18,23 @@
     ],
     "main_menu_dropdown_list": [
         {
-            "partial_selector": "nav-hand-tools",
+            "item_partial_selector": "nav-hand-tools",
             "expected_url": "https://practicesoftwaretesting.com/#/category/hand-tools"
         },
         {
-            "partial_selector": "nav-power-tools",
+            "item_partial_selector": "nav-power-tools",
             "expected_url": "https://practicesoftwaretesting.com/#/category/power-tools"
         },
         {
-            "partial_selector": "nav-other",
+            "item_partial_selector": "nav-other",
             "expected_url": "https://practicesoftwaretesting.com/#/category/other"
         },
         {
-            "partial_selector": "nav-special-tools",
+            "item_partial_selector": "nav-special-tools",
             "expected_url": "https://practicesoftwaretesting.com/#/category/special-tools"
         },
         {
-            "partial_selector": "nav-rentals",
+            "item_partial_selector": "nav-rentals",
             "expected_url": "https://practicesoftwaretesting.com/#/rentals"
         }
     ]
