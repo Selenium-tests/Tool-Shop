@@ -1,4 +1,5 @@
 import pytest
+import allure
 from fixtures.General import driver, wait
 from selenium.webdriver.support import expected_conditions as EC
 from fixtures.Login import login_form
@@ -30,6 +31,12 @@ def check_error_message_content(l_form, expected_message_content):
     assert l_form.login_error_message() == expected_message_content, 'Incorrect error message content'
 
 
+@allure.label('owner', 'Paweł Aksman')
+@allure.epic('E2E')
+@allure.tag('Login', 'Forms', 'Fields')
+@allure.link(URL.LOGIN_PAGE, 'Login page')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature('Attempting to log in using an incorrect email address')
 @pytest.mark.parametrize('email', incorrect_email_testdata)
 def test_incorrect_email(wait, login_form, email):
     actions(login_form, email, credentials.get('password'))
@@ -37,6 +44,12 @@ def test_incorrect_email(wait, login_form, email):
     check_error_message_content(login_form, 'Invalid email or password')
 
 
+@allure.label('owner', 'Paweł Aksman')
+@allure.epic('E2E')
+@allure.tag('Login', 'Forms', 'Fields')
+@allure.link(URL.LOGIN_PAGE, 'Login page')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature('Attempting to log in using an incorrect password')
 @pytest.mark.parametrize('password', incorrect_password_testdata)
 def test_incorrect_password(wait, login_form, password):
     actions(login_form, credentials.get('email'), password)
@@ -44,6 +57,12 @@ def test_incorrect_password(wait, login_form, password):
     check_error_message_content(login_form, 'Invalid email or password')
 
 
+@allure.label('owner', 'Paweł Aksman')
+@allure.epic('E2E')
+@allure.tag('Login', 'Forms', 'Fields')
+@allure.link(URL.LOGIN_PAGE, 'Login page')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature('Attempting to log in using an incorrect email format')
 @pytest.mark.parametrize('email', incorrect_email_format_testdata)
 def test_incorrect_email_format(wait, login_form, email):
     actions(login_form, email, credentials.get('password'))
@@ -51,6 +70,12 @@ def test_incorrect_email_format(wait, login_form, email):
     check_error_message_content(login_form, 'Email format is invalid')
 
 
+@allure.label('owner', 'Paweł Aksman')
+@allure.epic('E2E')
+@allure.tag('Login', 'Forms', 'Fields')
+@allure.link(URL.LOGIN_PAGE, 'Login page')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature('Logging in using correct credentials')
 def test_correct_credentials(wait, login_form):
     actions(login_form, credentials.get('email'), credentials.get('password'))
 
