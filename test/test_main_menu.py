@@ -27,7 +27,7 @@ def test_main_menu_links(main_menu, init_url, partial_selector, expected_url):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.feature('Expanding the main menu dropdown list')
 def test_expanding_dropdown_list(unexpanded_dropdown_list, wait):
-    unexpanded_dropdown_list.click_trigger_element()
+    unexpanded_dropdown_list.click_trigger_element('nav-categories')
 
     try:
         wait.until(EC.visibility_of_element_located(unexpanded_dropdown_list.dropdown_list_container_locator))
@@ -41,7 +41,7 @@ def test_expanding_dropdown_list(unexpanded_dropdown_list, wait):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.feature('Collapsing the main menu dropdown list')
 def test_collapsing_dropdown_list(expanded_dropdown_list, wait):
-    expanded_dropdown_list.click_trigger_element()
+    expanded_dropdown_list.click_trigger_element('nav-categories')
 
     try:
         wait.until(EC.invisibility_of_element_located(expanded_dropdown_list.dropdown_list_container_locator))
@@ -54,8 +54,8 @@ def test_collapsing_dropdown_list(expanded_dropdown_list, wait):
 @allure.tag('Main menu', 'Dropdown list', 'Links')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.feature('The main menu dropdown list links')
-@pytest.mark.parametrize('partial_selector, expected_url', main_menu_dropdown_list_testdata)
-def test_dropdown_list_links(expanded_dropdown_list, partial_selector, expected_url):
-    expanded_dropdown_list.click_link(partial_selector)
+@pytest.mark.parametrize('item_partial_selector, expected_url', main_menu_dropdown_list_testdata)
+def test_dropdown_list_links(expanded_dropdown_list, item_partial_selector, expected_url):
+    expanded_dropdown_list.click_link(item_partial_selector)
 
     assert expanded_dropdown_list.driver.current_url == expected_url, f"Expected URL to be {expected_url}, but got {expanded_dropdown_list.driver.current_url}"
