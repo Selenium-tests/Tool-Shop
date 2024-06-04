@@ -1,8 +1,10 @@
 from selenium.webdriver.support.wait import WebDriverWait
+from seleniumpagefactory.Pagefactory import PageFactory
 
 
-class BasePage:
+class BasePage(PageFactory):
     def __init__(self, driver):
+        super().__init__()
         self._driver = driver
         self._wait = WebDriverWait(driver, 10)
 
