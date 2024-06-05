@@ -3,10 +3,11 @@ import allure
 from fixtures.General import driver, wait
 from selenium.webdriver.support import expected_conditions as EC
 from fixtures.MainMenu import main_menu, unexpanded_dropdown_list, expanded_dropdown_list
-from support.TestDataLoader import load_main_menu_testdata, load_main_menu_dropdown_list_testdata
+from support.TestDataLoader import load_main_menu_testdata, load_dropdown_list_testdata
+from support.JSONKeys import JSONKeys
 
 main_menu_testdata = load_main_menu_testdata()
-main_menu_dropdown_list_testdata = load_main_menu_dropdown_list_testdata()
+main_menu_dropdown_list_testdata = load_dropdown_list_testdata(JSONKeys.MAIN_MENU_DROPDOWN_LIST)
 
 
 @allure.label('owner', 'Paweł Aksman')
