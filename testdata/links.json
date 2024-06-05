@@ -37,5 +37,31 @@
             "item_partial_selector": "nav-rentals",
             "expected_url": "https://practicesoftwaretesting.com/#/rentals"
         }
+    ],
+    "account_dropdown_list": [
+        {
+            "item_partial_selector": "nav-my-account",
+            "expected_url": "https://practicesoftwaretesting.com/#/account"
+        },
+        {
+            "item_partial_selector": "nav-my-favorites",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/favorites"
+        },
+        {
+            "item_partial_selector": "nav-my-profile",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/profile"
+        },
+        {
+            "item_partial_selector": "nav-my-invoices",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/invoices"
+        },
+        {
+            "item_partial_selector": "nav-my-messages",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/messages"
+        },
+        {
+            "item_partial_selector": "nav-sign-out",
+            "expected_url": "https://practicesoftwaretesting.com/#/auth/login"
+        }
     ]
 }
