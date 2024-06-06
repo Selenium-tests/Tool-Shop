@@ -1,6 +1,7 @@
 import pytest
 from fixtures.General import driver
 from pageobject.DropdownList import DropdownList
+from pageobject.AccountMenu import AccountMenu
 from support.Authentication import authentication
 
 
@@ -18,3 +19,9 @@ def expanded_account_dropdown_list(driver):
     dropdown_list.click_trigger_element('nav-menu')
     return dropdown_list
 
+
+@pytest.fixture
+def account_menu(driver):
+    authentication(driver)
+    menu = AccountMenu(driver)
+    return menu
