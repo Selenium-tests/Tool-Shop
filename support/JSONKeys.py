@@ -5,3 +5,4 @@ class JSONKeys:
     INCORRECT_EMAIL_FORMAT = 'incorrect_email_format'
     INCORRECT_PASSWORD = 'incorrect_password'
     ACCOUNT_DROPDOWN_LIST = 'account_dropdown_list'
+    ACCOUNT_MENU = 'account_menu'
