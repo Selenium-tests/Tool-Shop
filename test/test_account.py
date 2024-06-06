@@ -49,6 +49,11 @@ def test_account_dropdown_list_links(expanded_account_dropdown_list, item_partia
     assert expanded_account_dropdown_list.driver.current_url == expected_url, f"Expected URL to be {expected_url}, but got {expanded_account_dropdown_list.driver.current_url}"
 
 
+@allure.label('owner', 'Paweł Aksman')
+@allure.epic('E2E')
+@allure.tag('Account', 'Menu', 'Links')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.feature('The account menu links')
 @pytest.mark.parametrize('item_partial_selector, expected_url', account_menu_testdata)
 def test_account_menu_links(account_menu, item_partial_selector, expected_url):
     account_menu.click_link(item_partial_selector)
