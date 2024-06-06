@@ -1,12 +1,13 @@
 import pytest
 import allure
 from fixtures.General import driver, wait
-from fixtures.Account import unexpanded_account_dropdown_list, expanded_account_dropdown_list
+from fixtures.Account import unexpanded_account_dropdown_list, expanded_account_dropdown_list, account_menu
 from selenium.webdriver.support import expected_conditions as EC
 from support.TestDataLoader import load_dropdown_list_testdata
 from support.JSONKeys import JSONKeys
 
 account_dropdown_list_testdata = load_dropdown_list_testdata(JSONKeys.ACCOUNT_DROPDOWN_LIST)
+account_menu_testdata = load_dropdown_list_testdata(JSONKeys.ACCOUNT_MENU)
 
 
 @allure.label('owner', 'Paweł Aksman')
@@ -46,3 +47,9 @@ def test_collapsing_dropdown_list(wait, expanded_account_dropdown_list):
 def test_account_dropdown_list_links(expanded_account_dropdown_list, item_partial_selector, expected_url):
     expanded_account_dropdown_list.click_link(item_partial_selector)
     assert expanded_account_dropdown_list.driver.current_url == expected_url, f"Expected URL to be {expected_url}, but got {expanded_account_dropdown_list.driver.current_url}"
+
+
+@pytest.mark.parametrize('item_partial_selector, expected_url', account_menu_testdata)
+def test_account_menu_links(account_menu, item_partial_selector, expected_url):
+    account_menu.click_link(item_partial_selector)
+    assert account_menu.driver.current_url == expected_url, f"Expected URL to be {expected_url}, but got {account_menu.driver.current_url}"

@@ -63,5 +63,24 @@
             "item_partial_selector": "nav-sign-out",
             "expected_url": "https://practicesoftwaretesting.com/#/auth/login"
         }
+    ],
+    "account_menu": [
+        {
+            "item_partial_selector": "nav-favorites",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/favorites"
+        },
+        {
+            "item_partial_selector": "nav-profile",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/profile"
+        },
+        {
+            "item_partial_selector": "nav-invoices",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/invoices"
+        },
+        {
+            "item_partial_selector": "nav-messages",
+            "expected_url": "https://practicesoftwaretesting.com/#/account/messages"
+        }
     ]
+
 }
